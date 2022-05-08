@@ -18,6 +18,7 @@ export const Circle = ({size, showText = false, borderColor, backgroundColor}) =
         },
     };
         return(
+
         <div style={styles.circle}>
             {showText ? '60%' : <span style={styles.circle_dot}/>}
         </div>

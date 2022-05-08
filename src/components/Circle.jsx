@@ -1,4 +1,4 @@
-export const Circle = ({size, showText = false, borderColor, backgroundColor}) => {
+export const Circle = ({size, showText = false, borderColor, backgroundColor,topText,bottomText,borderWeight}) => {
 
     const styles = {
         circle: {
@@ -7,19 +7,22 @@ export const Circle = ({size, showText = false, borderColor, backgroundColor}) =
             height: size,
             width: size,
             backgroundColor: backgroundColor,
-            border: `2px solid ${borderColor}`,
+            border: `${borderWeight} solid ${borderColor}`,
             justifyContent: 'center',
             alignItems: 'center',
             borderRadius: '50%',
+            textFont: 'Inter'
         },
         circle_dot: {
-            width: '20%',
-            height: '20%',
+            width: '6px',
+            height: '6px',
+            backgroundColor: '#00000026',
+            borderRadius: '50%'
         },
     };
         return(
         <div style={styles.circle}>
-            {showText ? '60%' : <span style={styles.circle_dot}/>}
+            {showText ? <div style={{lineHeight: '1', fontFamily: 'Inter', fontSize: '17px'}}><div style={{fontSize: '24px', fontWeight: "bold"}}>{topText}</div>{bottomText}</div> : <span style={styles.circle_dot}/>}
         </div>
     )
 

@@ -5,6 +5,7 @@ import banner from "../../assets/banner.PNG"
 import full_banner from "../../assets/full_banner.PNG"
 
 import './home.styles.scss';
+import { Circle } from "../../components/Circle";
 
 const Home=()=>(
 
@@ -23,7 +24,7 @@ const Home=()=>(
                 </div>
             </Grid>
             <Grid className="second_column" item xs={12} sm={4} md={6} lg={6}  >  {/* 50% width on desktop and 66.66% width on mobile */}
-                I am middle component
+                <Circle backgroundColor={'#F8D957'} size={84} showText={true} borderColor={'#FFFFFF'} topText={'07'} bottomText={'days'} borderWeight={1.5}/>
             </Grid>
               <Grid item sm={4} md={3} lg={3}  display={{xs: "none",sm:"block",md:"block",lg:"block"}} >       
         

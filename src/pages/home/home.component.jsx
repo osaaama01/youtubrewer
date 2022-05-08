@@ -24,7 +24,7 @@ const Home=(p)=>(
                 </div>
             </Grid>
             <Grid className="second_column" item xs={6}>
-                <Circle size={'40px'} showText = {true}/>
+                <Circle size={'20px'} backgroundColor={'#04CF55'} borderColor={'#000000'}/>
             </Grid>
             <Grid item xs={3}>
                 <div className="coffee_row">

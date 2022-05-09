@@ -6,7 +6,6 @@ import full_banner from "../../assets/full_banner.PNG"
 
 import RewardsBar from "../../components/rewardbar/rewardbar.component";
 import './home.styles.scss';
-import { Circle } from "../../components/Circle";
 
 const Home = () => (
 

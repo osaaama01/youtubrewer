@@ -1,105 +1,99 @@
 import React from "react";
 
-import { Grid, Hidden } from "@mui/material";
+import { Grid } from "@mui/material";
 import { Circle } from "../Circle";
 
-
-import './rewardsbar.styles.scss';
-
+import "./rewardsbar.styles.scss";
 
 const RewardsBar = () => (
+  <div>
+    <Grid container spacing={0} style={{justifyContent: 'center'}}>
+      <Grid className='second_column' item sm={4} md={3}>
+        <Grid container alignItems='center' direction='row'>
+          <Grid item sm={4} md={4} style={{ zIndex: 1 }}>
+            <Circle
+              backgroundColor={"#F8D957"}
+              size={84}
+              showText={true}
+              borderColor={"#FFFFFF"}
+              topText={"03"}
+              bottomText={"days"}
+              borderWeight={1.5}
+            ></Circle>
+          </Grid>
 
-    <div className="rewards_row" >
+          <Grid item sm={4} md={8}>
+            <div
+              className='reward_background_div'
+              style={{ marginRight: "-3px" }}
+            ></div>
+          </Grid>
+        </Grid>
+      </Grid>
 
-        <div className="child_div">
+      <Grid className='second_column' item sm={4} md={3}>
+        <Grid container alignItems='center' direction='row'>
+          <Grid item sm={4} md={4} style={{ zIndex: 1 }}>
+            <Circle
+              backgroundColor={"#F8D957"}
+              size={84}
+              showText={true}
+              borderColor={"#FFFFFF"}
+              topText={"07"}
+              bottomText={"days"}
+              borderWeight={1.5}
+            ></Circle>
+          </Grid>
 
-            <Grid container spacing={0} >
+          <Grid item sm={4} md={8}>
+            <div
+              className='reward_background_div'
+              style={{ marginRight: "-3px" }}
+            ></div>
+          </Grid>
+        </Grid>
+      </Grid>
 
-            <Grid item md={0.8} implementation="css" smDown component={Hidden} />
+      <Grid className='second_column' item sm={4} md={3}>
+        <Grid container alignItems='center' direction='row'>
+          <Grid item sm={4} md={4} style={{ zIndex: 1 }}>
+            <Circle
+              backgroundColor={"#F8D957"}
+              size={84}
+              showText={true}
+              borderColor={"#FFFFFF"}
+              topText={"15"}
+              bottomText={"days"}
+              borderWeight={1.5}
+            ></Circle>
+          </Grid>
 
-                <Grid className="second_column" item sm={4} md={3} >
+          <Grid item sm={4} md={8}>
+            <div
+              className='reward_background_div'
+              style={{ marginRight: "-3px" }}
+            ></div>
+          </Grid>
+        </Grid>
+      </Grid>
 
-                    <Grid container alignItems="center" direction="row" >
-                        <Grid item sm={4} md={5} >
-                            <Circle backgroundColor={'#F8D957'} size={84} showText={true} borderColor={'#FFFFFF'} topText={'03'}
-                                bottomText={'days'} borderWeight={1.5} >
-                            </Circle>
-                        </Grid>
-
-                        <Grid item sm={4} md={7}   >
-
-                            <div className="reward_background_div">
-
-                            </div>
-                        </Grid>
-
-                    </Grid>
-
-                </Grid>
-
-                <Grid className="second_column" item sm={4} md={3}>
-
-                    <Grid container alignItems="center" direction={"row"}>
-                        <Grid item sm={4} md={5} >
-                            <Circle backgroundColor={'#F8D957'} size={84} showText={true} borderColor={'#FFFFFF'} topText={'07'}
-                                bottomText={'days'} borderWeight={1.5} >
-                            </Circle>
-                        </Grid>
-
-                        <Grid item sm={4} md={7}   >
-
-                            <div className="reward_background_div">
-
-                            </div>
-                        </Grid>
-
-                    </Grid>
-
-                </Grid>
-
-                <Grid className="second_column" item sm={4} md={3}>
-
-                    <Grid container alignItems="center" direction={"row"}  >
-                        <Grid item sm={4} md={5} >
-                            <Circle backgroundColor={'#F8D957'} size={84} showText={true} borderColor={'#FFFFFF'} topText={'15'}
-                                bottomText={'days'} borderWeight={1.5} >
-                            </Circle>
-                        </Grid>
-
-                        <Grid item sm={4} md={7}   >
-
-                            <div className="reward_background_div">
-
-                            </div>
-                        </Grid>
-
-                    </Grid>
-
-                </Grid>
-
-                <Grid className="second_column" item sm={4} md={1.5}>
-
-                    <Grid container alignItems="center" direction={"row"} >
-                        <Grid item sm={4} md={5} >
-                            <Circle backgroundColor={'#F8D957'} size={84} showText={true} borderColor={'#FFFFFF'} topText={'01'}
-                                bottomText={'Month'} borderWeight={1.5} >
-                            </Circle>
-                        </Grid>
-
-                      
-
-                    </Grid>
-
-                </Grid>
-
-
-
-
-            </Grid>
-
-        </div>
-
-    </div>
+      <Grid className='second_column' item sm={4} md={1.5}>
+        <Grid container alignItems='center' direction='row'>
+          <Grid item sm={4} md={4} style={{ zIndex: 1, marginLeft: "-3px" }}>
+            <Circle
+              backgroundColor={"#F8D957"}
+              size={84}
+              showText={true}
+              borderColor={"#FFFFFF"}
+              topText={"01"}
+              bottomText={"month"}
+              borderWeight={1.5}
+            ></Circle>
+          </Grid>
+        </Grid>
+      </Grid>
+    </Grid>
+  </div>
 );
 
 export default RewardsBar;

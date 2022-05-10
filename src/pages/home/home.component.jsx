@@ -6,6 +6,7 @@ import full_banner from "../../assets/full_banner.PNG"
 
 import RewardsBar from "../../components/rewardbar/rewardbar.component";
 import './home.styles.scss';
+import { Battery } from "../../components/battery/battery.component";
 
 const Home = () => (
 
@@ -25,7 +26,8 @@ const Home = () => (
             </Grid>
             <Grid className="second_column" item xs={12} sm={4} md={6} lg={6}  >  {/* 50% width on desktop and 66.66% width on mobile */}
               
-                <RewardsBar></RewardsBar>
+                <Battery/>
+                <RewardsBar/>
                   
             </Grid>
             <Grid className="first_column" item sm={4} md={3} lg={3} display={{ xs: "none", sm: "block", md: "block", lg: "block" }}>

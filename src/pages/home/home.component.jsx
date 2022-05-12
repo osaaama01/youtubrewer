@@ -7,6 +7,7 @@ import full_banner from "../../assets/full_banner.PNG"
 import RewardsBar from "../../components/rewardbar/rewardbar.component";
 import './home.styles.scss';
 import { Battery } from "../../components/battery/battery.component";
+import { Coffee } from "../../components/coffee/coffee.component"
 
 const Home = () => (
 
@@ -26,8 +27,9 @@ const Home = () => (
             </Grid>
             <Grid className="second_column" item xs={12} sm={4} md={6} lg={6}  >  {/* 50% width on desktop and 66.66% width on mobile */}
               
-                <Battery/>
+                <Battery buttonText={"Please set the video to brew"}/>
                 <RewardsBar/>
+                <Coffee views={6}/>
                   
             </Grid>
             <Grid className="first_column" item sm={4} md={3} lg={3} display={{ xs: "none", sm: "block", md: "block", lg: "block" }}>

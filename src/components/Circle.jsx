@@ -7,7 +7,7 @@ export const Circle = ({size, showText = false, borderColor, backgroundColor,top
             height: size,
             width: size,
             backgroundColor: backgroundColor,
-            border: `${borderWeight} solid ${borderColor}`,
+            border: `${borderWeight}px solid ${borderColor}`,
             justifyContent: 'center',
             alignItems: 'center',
             borderRadius: '50%',

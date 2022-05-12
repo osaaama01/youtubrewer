@@ -12,6 +12,7 @@ export const Circle = ({size, showText = false, borderColor, backgroundColor,top
             alignItems: 'center',
             borderRadius: '50%',
             textFont: 'Inter'
+            
         },
         circle_dot: {
             width: '6px',

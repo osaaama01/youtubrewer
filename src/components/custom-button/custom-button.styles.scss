@@ -1,0 +1,49 @@
+.button{
+    
+    display: inline-flex;
+    padding: 0;
+    background:#000201;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    overflow: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+}
+.button:hover{
+    border: 1px solid white;    
+}
+
+.button_icon{
+ padding-left: 20px; 
+ display: inline-flex;  
+ padding-top: 18.77px;
+ padding-bottom: 18.28px;
+ margin-right: 10.74px;
+
+}
+.text{
+    color: white;
+    line-height: 1;
+   
+    
+    padding-right: 17.55px;
+    text-align: start;
+}
+
+.bottom_text{
+    font-family: 'Inter';
+ 
+    font-family: 'Inter';
+    font-size: 10px;
+ }
+ .top_text{
+    padding-top: 18.77px;
+    font-size: 24px;
+    font-weight: 100;
+    padding-bottom: 16.85px;
+
+    
+ }

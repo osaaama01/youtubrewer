@@ -1,0 +1,43 @@
+import { Grid } from "@mui/material";
+import React from "react"
+import Icon from "../custom-button/Icon/icon.component";
+
+import "./settings-bar.styles.scss"
+
+const SettingsBar=()=>{
+    const styles = {
+        
+    };
+    
+    return(
+        <div>
+             <div className="top_row">
+            
+            </div>
+            <div className="middle_row">
+                <Grid container direction={"row"} alignItems="center">
+                    <Grid item md={3}>
+                        <button className="settings_button">
+                            <Icon imageName={"settings"}  width={49} height={49}></Icon>
+                        </button>
+                        
+                    </Grid>
+                    <Grid item md={6}>
+                        <span className="tile_text">YoutubBrewer</span>
+                    </Grid>
+                    <Grid item md={3}>
+                    <button className="file_button">
+                            <Icon imageName={"file"}  width={49} height={49}></Icon>
+                        </button>
+                    </Grid>
+                </Grid>
+            </div>
+            <div className="bottom_row">
+            
+            </div>
+        </div>
+       
+    )
+}
+
+export default SettingsBar;

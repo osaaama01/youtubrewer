@@ -1,0 +1,32 @@
+.top_row{
+    background-color: #C0313F !important;
+     height: 1.616rem;    //25.85px
+     margin: 0 21px;
+}
+.middle_row{
+    background: #DB5E68;
+    height: 5.023rem;    //80.37px
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.bottom_row{
+    background: #212121;
+    height: 1.616rem;    //25.85px
+}
+.tile_text{
+    font-family: 'Kanit', sans-serif;
+    display: flex;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 42px;
+    letter-spacing: 0em;
+    justify-content: center;
+    color: white;
+}
+.settings_button{
+    margin-top: 19.98px;
+}
+.file_button{
+    margin-top: 19.98px;
+}

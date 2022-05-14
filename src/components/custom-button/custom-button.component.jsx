@@ -1,11 +1,6 @@
 import React from "react"
-
-
-
 import "./custom-button.styles.scss"
 import Icon from "./Icon/icon.component";
-
-
 
 const CustomButtom= ({top_text,bottom_text,imageName,width,height})=>{
     return(

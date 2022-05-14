@@ -29,12 +29,11 @@ const Home = () => (
             </Grid>
             <Grid className="second_column" item xs={12} sm={4} md={4} lg={4}  >  {/* 50% width on desktop and 66.66% width on mobile */}
               
-                
+                <div style={{backgroundColor: '#BAB0B0', borderRadius:'12px'}}>
                 <Battery buttonText={"Please set the video to brew"}/>
                 <Video/>
+                </div>
                 <Coffee views={6}/>
-              
-                
                  
                 <SettingsBar></SettingsBar>
                 <RewardsBar/>

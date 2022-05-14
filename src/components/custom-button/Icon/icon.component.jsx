@@ -1,8 +1,8 @@
 import "./icon.styles.scss"
 import google_play from "../../../assets/google_play.png"
 import apple from "../../../assets/apple.png"
-import settings_icon from "../../../assets/settings_icon.jpg"
-import file_icon from "../../../assets/file_icon.jpg"
+import settings_icon from "../../../assets/settings_icon.png"
+import file_icon from "../../../assets/file_icon.png"
 
 import React from "react"
 

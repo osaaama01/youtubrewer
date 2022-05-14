@@ -14,18 +14,18 @@ const SettingsBar=()=>{
             <div className="middle_row">
                 <Grid container direction={"row"} alignItems="center">
                     <Grid item md={3}>
-                        <button className="settings_button">
+                        <button className="settings_button" style={{backgroundColor: 'transparent', border: 'none'}}>
                             <Icon imageName={"settings"}  width={49} height={49}></Icon>
                         </button>
                         
                     </Grid>
                     <Grid item md={6}>
-                        <span className="tile_text">YoutubBrewer</span>
+                        <span className="tile_text" >YoutubBrewer</span>
                     </Grid>
                     <Grid item md={3}>
-                    <button className="file_button">
+                    <button className="file_button" style={{backgroundColor: 'transparent', border: 'none', filter: 'invert(100%)'}}>
                             <Icon imageName={"file"}  width={49} height={49}></Icon>
-                        </button>
+                    </button>
                     </Grid>
                 </Grid>
             </div>

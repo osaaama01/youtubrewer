@@ -15,7 +15,7 @@ import Video from "../../components/video/video.component";
 const Home = () => (
 
     <div className="container">
-        <Grid container spacing={2}>
+        <Grid container spacing={2} height="250">
             <Grid className="first_column" item sm={4} md={4} lg={4} display={{ xs: "none", sm: "block", md: "block", lg: "block" }} >   {/* 33.33% width on desktop and 50% width on mobile */}
                 <div className="banner_row">
                     <img className="banner_image" src={banner} alt="banner.png" />

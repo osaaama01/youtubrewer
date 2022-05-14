@@ -4,9 +4,8 @@ import { Circle } from "../Circle";
 import "./rewardsbar.styles.scss";
 
 const RewardsBar = () => (
-  <div>
-    <Grid container spacing={0} style={{justifyContent: 'center'}}>
-      <Grid className='second_column' item sm={4} md={3}>
+    <Grid style={{marginLeft:'4px'}} container spacing={0} >
+      <Grid className='second_column' item sm={4} md={3.3}>
         <Grid container alignItems='center' direction='row'>
           <Grid item sm={4} md={4} style={{ zIndex: 1 }}>
             <Circle
@@ -29,7 +28,7 @@ const RewardsBar = () => (
         </Grid>
       </Grid>
 
-      <Grid className='second_column' item sm={4} md={3}>
+      <Grid className='second_column' item sm={4} md={3.3}>
         <Grid container alignItems='center' direction='row'>
           <Grid item sm={4} md={4} style={{ zIndex: 1 }}>
             <Circle
@@ -52,7 +51,7 @@ const RewardsBar = () => (
         </Grid>
       </Grid>
 
-      <Grid className='second_column' item sm={4} md={3}>
+      <Grid className='second_column' item sm={4} md={3.3}>
         <Grid container alignItems='center' direction='row'>
           <Grid item sm={4} md={4} style={{ zIndex: 1 }}>
             <Circle
@@ -75,7 +74,7 @@ const RewardsBar = () => (
         </Grid>
       </Grid>
 
-      <Grid className='second_column' item sm={4} md={1.5}>
+      <Grid className='second_column' item sm={4} md={2.1}>
         <Grid container alignItems='center' direction='row'>
           <Grid item sm={4} md={4} style={{ zIndex: 1, marginLeft: "-3px" }}>
             <Circle
@@ -91,7 +90,6 @@ const RewardsBar = () => (
         </Grid>
       </Grid>
     </Grid>
-  </div>
 );
 
 export default RewardsBar;

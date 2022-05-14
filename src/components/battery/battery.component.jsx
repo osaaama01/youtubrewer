@@ -6,19 +6,19 @@ import { Circle } from "../Circle";
 export const Battery = () => {
   return (
     <Grid container style={{ height: "10%", justifyContent: "center" }}>
-      <Grid item md={6} style={{ backgroundColor: "#D9CFCC" }}>
+      <Grid item md={11} style={{ backgroundColor: "#D9CFCC" }}>
         <Grid
           item
           md={12}
           style={{ height: "30%", display: "flex", justifyContent: "right" }}
         >
-          <Grid container md={11}>
+          <Grid container item md={11}>
             <Grid
               item
               md={5}
               style={{ display: "flex", alignItems: "flex-end" }}
             >
-              <div className='line'></div>
+              <div className='battery_line'></div>
             </Grid>
             <Grid
               item
@@ -29,28 +29,28 @@ export const Battery = () => {
                 justifyContent: "center",
               }}
             >
-              <div className='text'>4hr</div>
+              <div className='battery_text'>4hr</div>
             </Grid>
             <Grid
               item
               md={5}
               style={{ display: "flex", alignItems: "flex-end" }}
             >
-              <div className='line'></div>
+              <div className='battery_line'></div>
             </Grid>
             <Grid
               item
               md={1}
               style={{ display: "flex", alignItems: "flex-end" }}
             >
-              <div className='text' style={{ marginBottom: "10px" }}>
+              <div className='battery_text' style={{ marginBottom: "10px" }}>
                 <BoltIcon />
               </div>
             </Grid>
           </Grid>
         </Grid>
         <Grid item md={12} style={{ height: "70%" }}>
-          <Grid container md={12} height='100%' justifyContent={"space-evenly"}>
+          <Grid container item md={12} height='100%' justifyContent={"space-evenly"}>
             <Grid item>
               <Circle
                 backgroundColor={"#04CF55"}
@@ -131,14 +131,15 @@ export const Battery = () => {
                 borderWeight={2}
               />
             </Grid>
-            <Grid container md={11} margin={"3px 3px"}>
+            <Grid container item md={11} margin={"3px 3px"}>
               <Button
                 variant='contained'
                 style={{backgroundColor:'#000000', textTransform: 'none', cursor: 'default', width: '100%' }}
               >
-                <div className='button'>Please set the video to brew</div>
+                <div className='battery_button'>Please set the video to brew</div>
               </Button>
             </Grid>
+          
           </Grid>
         </Grid>
       </Grid>

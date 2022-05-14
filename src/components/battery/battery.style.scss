@@ -1,4 +1,4 @@
-.line {
+.battery_line {
   height: 7%;
   background-color: black;
   border-radius: 3px;
@@ -6,7 +6,7 @@
   margin-bottom: 8px;
 }
 
-.text {
+.battery_text {
   height: 7%;
   margin-bottom: 8px;
   font-family: "Inter";
@@ -19,7 +19,7 @@
   color: #000000;
 }
 
-.button {
+.battery_button {
   font-family: 'Inter';
   font-style: normal;
   font-weight: 500;

@@ -5,12 +5,9 @@ import Icon from "../custom-button/Icon/icon.component";
 import "./settings-bar.styles.scss"
 
 const SettingsBar=()=>{
-    const styles = {
-        
-    };
     
     return(
-        <div>
+        <div className="settings_bar">
              <div className="top_row">
             
             </div>

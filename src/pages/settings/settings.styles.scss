@@ -1,0 +1,121 @@
+.settings_page {
+    background: #311414;;
+}
+body {background-color: #311414;}
+
+.text {
+    // display: flex;
+    // color: white;
+    // font-size: 14px;
+    // flex-wrap: wrap;
+    // flex-direction: row;
+
+}
+
+
+.arrowback_button {
+    display: inline-flex;
+    align-items: center;
+    color: white;
+    border: none;
+    background: #311414;
+    width: 44px;
+    height: 44px;
+    margin-left: 100px;
+}
+
+.add_video{
+    margin-top: 65px;
+    display: inline-flex;
+    align-items: center;
+}
+
+.add_video_button {
+    background: "white";
+    border: "none";
+    border-radius: 50%;
+    width: 29px;
+    height: 29px;
+    display: inline-flex;
+    justify-content: center;
+    margin-right: 12px;
+    cursor: pointer;
+
+}
+.videos_container{
+    padding: 40px 20px;
+    background: #776464;
+    overflow: auto;
+    height: 430px;
+
+}
+.video_text{
+    font-size: 25px;
+}
+.video-item {
+     width: 100%;
+    display: flex;
+     height: 112px;
+    margin-bottom: 15px;
+    background: #3D230F;
+    border-radius: 10px;
+    min-width: 0;
+
+    padding-top: 20px;
+    
+    
+  
+    img {
+      width: 20%;
+      margin: 20px;
+      border-radius: 10%;
+      
+    }
+    .text {
+
+      width: 30%;
+      color: black;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+
+      font-family: 'Inter';
+      font-weight: 500;
+      font-size: 27px;
+      color: #FFFF;
+
+      padding: 10px 20px;
+      
+    }
+  
+    .delete{
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: center;
+        margin-right: 30px;
+    }
+
+      .delete_button{
+        display: flex;
+        background: #D61C25;
+        flex-direction: column;
+        height: 42px;
+        width: 42px;
+        border-radius: 50%;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+    }
+
+  
+      .name {
+        font-size: 16px;
+      }
+    }
+    .video-item:hover{
+        background: #FF7B31;
+    }
+  

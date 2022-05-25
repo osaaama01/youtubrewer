@@ -8,93 +8,186 @@ import RemoveIcon from '@mui/icons-material/Remove';
 import video_image from "../../assets/video_image.PNG"
 
 import './settings.styles.scss'
+import DeleteModal from './delete-modal/delete-modal.component';
+import React from 'react';
+import AddVideoModal from './addvideo-modal/addvideo-modal.component';
 
 
-const Settings = () => {
-    return (
-        <Grid className='settings_page' container>
+class Settings extends React.Component {
+   
+    
+    constructor() {
+        super();
+       
+        this.state = {opened: false,addvideomodal_opened:false};
+        this.OpenConfirmModal = this.OpenConfirmModal.bind(this);
+        this.OpenAddVideoModal=this.OpenAddVideoModal.bind(this)
+    }
+     OpenConfirmModal(){
+        
+        this.setState({opened:!this.state.opened});
+    }
+    OpenAddVideoModal(){
+        this.setState({addvideomodal_opened:!this.state.addvideomodal_opened});
+    }
 
-            <div className='arrowback_button' >
-                <button style={{ background: "#311414", color: "white", border: "none" }} >
-                    <ArrowBackIcon height={44} className="arrow_icon" />
-                </button>
+    render() {
+        return <Grid className='settings_page' container>
+            <AddVideoModal addVideoModel={this.OpenAddVideoModal} addvideomodal_opened={this.state.addvideomodal_opened} ></AddVideoModal>
+          <DeleteModal isOpened={this.OpenConfirmModal} opened={this.state.opened}/>
 
-            </div>
-            <div className='tile' >
-                {/* <hr style={{color:"white"}}/> */}
+      <div className='arrowback_button' >
+          <button style={{ background: "#311414", color: "white", border: "none" }} >
+              <ArrowBackIcon height={44} className="arrow_icon" />
+          </button>
 
-            </div>
-            <Grid  container>
-                <Grid item md={3}>
+      </div>
+      <div className='tile' >
+          {/* <hr style={{color:"white"}}/> */}
 
-                </Grid>
-                <Grid item md={6} zeroMinWidth>
+      </div>
+      <Grid container>
+          <Grid item md={3}>
 
-                    <div className='videos_container'>
-                        <div className='video-item'>
-                            <img src={video_image} />
-                            <span className='text'>Final fantacy 6  </span>
+          </Grid>
+          <Grid item md={6} zeroMinWidth>
 
-                            <span className='delete'>
-                                <button className='delete_button' >
-                                    <RemoveIcon style={{ color: "black", justifyContent: "center" }} />
+              <div className='videos_container'>
+                  {
+                      videos.map((video) => (
+                          <div className='video-item' key={video.id}>
+                              <img src={video_image} />
+                              <span className='text'>{video.title}  </span>
 
-                                </button>
-                            </span>
+                              <span className='delete'>
+                                  <button className='delete_button' onClick={this.OpenConfirmModal}>
+                                      <RemoveIcon style={{ color: "black", justifyContent: "center" }} />
 
-                        </div>
-                        <div className='video-item'>
-                            <img src={video_image} />
-                            <span className='text'>Final fantacy 6   </span>
+                                  </button>
+                              </span>
 
-                            <span className='delete'>
-                                <button className='delete_button' >
-                                    <RemoveIcon style={{ color: "black", justifyContent: "center" }} />
+                          </div>
+                      ))
+                  }
 
-                                </button>
-                            </span>
-
-                        </div>
-                        <div className='video-item'>
-                            <img src={video_image} />
-                            <span className='text'>Final fantacy 6   </span>
-
-                            <span className='delete'>
-                                <button className='delete_button' >
-                                    <RemoveIcon style={{ color: "black", justifyContent: "center" }} />
-
-                                </button>
-                            </span>
-
-                        </div>
-
-                    </div>
-
-
-                    <Grid container>
-                        <Grid item>
-                            <div className='add_video' >
-                                <button className='add_video_button' >
-                                    <AddIcon style={{ color: "black", justifyContent: "center" }} />
-                                </button>
-                                <span className='video_text'>Add video   </span>
-                                
-
-                            </div>
-
-                        </Grid>
-                    </Grid>
-                </Grid>
-                <Grid item md={3}>
-                  
-
-                </Grid>
-            </Grid>
+              </div>
 
 
+              <Grid container>
+                  <Grid item>
+                      <div className='add_video' >
+                          <button className='add_video_button' onClick={this.OpenAddVideoModal}>
+                              <AddIcon style={{ color: "black", justifyContent: "center" }} />
+                          </button>
+                          <span className='video_text'>Add video   </span>
 
-        </Grid>
-    )
-};
+
+                      </div>
+
+                  </Grid>
+              </Grid>
+          </Grid>
+          <Grid item md={3}>
+
+
+          </Grid>
+      </Grid>
+
+
+
+  </Grid>
+    }
+  }
+
+
+const videos = [
+    {
+        title: 'Final fantacy 6',
+        //   imageUrl: 'https://i.ibb.co/cvpntL1/hats.png',
+        id: 1,
+    },
+    {
+        title: 'Final fantacy 6',
+        //   imageUrl: 'https://i.ibb.co/cvpntL1/hats.png',
+        id: 2,
+    },
+    {
+        title: 'Final fantacy 6',
+        //   imageUrl: 'https://i.ibb.co/cvpntL1/hats.png',
+        id: 3,
+    }
+];
+
+
+// const Settings = () => {
+//     return (
+        
+//        // <DeleteModal></DeleteModal>
+
+
+//         <Grid className='settings_page' container>
+
+//             <div className='arrowback_button' >
+//                 <button style={{ background: "#311414", color: "white", border: "none" }} onClick={OpenConfirmModal} >
+//                     <ArrowBackIcon height={44} className="arrow_icon" />
+//                 </button>
+
+//             </div>
+//             <div className='tile' >
+//                 {/* <hr style={{color:"white"}}/> */}
+
+//             </div>
+//             <Grid container>
+//                 <Grid item md={3}>
+
+//                 </Grid>
+//                 <Grid item md={6} zeroMinWidth>
+
+//                     <div className='videos_container'>
+//                         {
+//                             videos.map((video) => (
+//                                 <div className='video-item'>
+//                                     <img src={video_image} />
+//                                     <span className='text'>{video.title}  </span>
+
+//                                     <span className='delete'>
+//                                         <button className='delete_button' >
+//                                             <RemoveIcon style={{ color: "black", justifyContent: "center" }} />
+
+//                                         </button>
+//                                     </span>
+
+//                                 </div>
+//                             ))
+//                         }
+
+//                     </div>
+
+
+//                     <Grid container>
+//                         <Grid item>
+//                             <div className='add_video' >
+//                                 <button className='add_video_button' >
+//                                     <AddIcon style={{ color: "black", justifyContent: "center" }} />
+//                                 </button>
+//                                 <span className='video_text'>Add video   </span>
+
+
+//                             </div>
+
+//                         </Grid>
+//                     </Grid>
+//                 </Grid>
+//                 <Grid item md={3}>
+
+
+//                 </Grid>
+//             </Grid>
+
+
+
+//         </Grid>
+//     )
+// };
 
 export default Settings;

@@ -1,7 +1,7 @@
 .settings_page {
     background: #311414;;
 }
-body {background-color: #311414;}
+ body {background-color: #311414;}
 
 .text {
     // display: flex;
@@ -11,7 +11,6 @@ body {background-color: #311414;}
     // flex-direction: row;
 
 }
-
 
 .arrowback_button {
     display: inline-flex;
@@ -46,7 +45,10 @@ body {background-color: #311414;}
     padding: 40px 20px;
     background: #776464;
     overflow: auto;
-    height: 430px;
+    max-height: 430px;
+    max-width: 792px;
+    margin: 0 auto;
+    
 
 }
 .video_text{

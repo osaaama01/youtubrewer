@@ -5,18 +5,22 @@ import { Circle } from "../Circle";
 
 export const Battery = () => {
   return (
-    <Grid container style={{ height: "10%", justifyContent: "center" }}>
+    <Grid container style={{ justifyContent: "center" }}>
       <Grid item md={11} style={{ backgroundColor: "#D9CFCC" }}>
         <Grid
           item
           md={12}
-          style={{ height: "30%", display: "flex", justifyContent: "right" }}
+          style={{ height: "15%", display: "flex", justifyContent: "right" }}
         >
           <Grid container item md={11}>
             <Grid
               item
               md={5}
-              style={{ display: "flex", alignItems: "flex-end" }}
+              style={{
+                display: "flex",
+                alignItems: "flex-end",
+                height: "100%",
+              }}
             >
               <div className='battery_line'></div>
             </Grid>
@@ -25,7 +29,7 @@ export const Battery = () => {
               md={1}
               style={{
                 display: "flex",
-                alignItems: "flex-end",
+                alignItems: "center",
                 justifyContent: "center",
               }}
             >
@@ -34,112 +38,118 @@ export const Battery = () => {
             <Grid
               item
               md={5}
-              style={{ display: "flex", alignItems: "flex-end" }}
+              style={{
+                display: "flex",
+                alignItems: "flex-end",
+                height: "100%",
+              }}
             >
               <div className='battery_line'></div>
             </Grid>
             <Grid
               item
               md={1}
-              style={{ display: "flex", alignItems: "flex-end" }}
+              style={{
+                display: "flex",
+                alignItems: "center",
+                height: "100%",
+                marginTop: "2px",
+              }}
             >
-              <div className='battery_text' style={{ marginBottom: "10px" }}>
+              <div className='battery_text' style={{ marginTop: "4px" }}>
                 <BoltIcon />
               </div>
             </Grid>
           </Grid>
         </Grid>
         <Grid item md={12} style={{ height: "70%" }}>
-          <Grid container item md={12} height='100%' justifyContent={"space-evenly"}>
+          <Grid
+            container
+            item
+            md={12}
+            height='100%'
+            justifyContent={"space-evenly"}
+          >
             <Grid item>
               <Circle
                 backgroundColor={"#04CF55"}
-                size={32}
+                size={25}
                 borderColor={"#000000"}
-                topText={"07"}
-                bottomText={"days"}
                 borderWeight={2}
               />
             </Grid>
             <Grid item>
               <Circle
                 backgroundColor={"#04CF55"}
-                size={32}
+                size={25}
                 borderColor={"#000000"}
-                topText={"07"}
-                bottomText={"days"}
                 borderWeight={2}
               />
             </Grid>
             <Grid item>
               <Circle
                 backgroundColor={"#04CF55"}
-                size={32}
+                size={25}
                 borderColor={"#000000"}
-                topText={"07"}
-                bottomText={"days"}
                 borderWeight={2}
               />
             </Grid>
             <Grid item>
               <Circle
                 backgroundColor={"#04CF55"}
-                size={32}
+                size={25}
                 borderColor={"#000000"}
-                topText={"07"}
-                bottomText={"days"}
                 borderWeight={2}
               />
             </Grid>
             <Grid item>
               <Circle
                 backgroundColor={"#04CF55"}
-                size={32}
+                size={25}
                 borderColor={"#000000"}
-                topText={"07"}
-                bottomText={"days"}
                 borderWeight={2}
               />
             </Grid>
             <Grid item>
               <Circle
                 backgroundColor={"#04CF55"}
-                size={32}
+                size={25}
                 borderColor={"#000000"}
-                topText={"07"}
-                bottomText={"days"}
                 borderWeight={2}
               />
             </Grid>
             <Grid item>
               <Circle
                 backgroundColor={"#04CF55"}
-                size={32}
+                size={25}
                 borderColor={"#000000"}
-                topText={"07"}
-                bottomText={"days"}
                 borderWeight={2}
               />
             </Grid>
             <Grid item>
               <Circle
                 backgroundColor={"#04CF55"}
-                size={32}
+                size={25}
                 borderColor={"#000000"}
-                topText={"07"}
-                bottomText={"days"}
                 borderWeight={2}
               />
             </Grid>
             <Grid container item md={11} margin={"3px 3px"}>
               <Button
                 variant='contained'
-                style={{backgroundColor:'#000000', textTransform: 'none', cursor: 'default', width: '100%' }}
+                style={{
+                  backgroundColor: "#000000",
+                  textTransform: "none",
+                  cursor: "default",
+                  width: "100%",
+                  height: "60%",
+                }}
               >
-                <div className='battery_button'>Please set the video to brew</div>
+                <div className='battery_button'>
+                  Please set the video to brew
+                </div>
               </Button>
             </Grid>
-          
           </Grid>
         </Grid>
       </Grid>

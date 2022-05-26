@@ -119,7 +119,6 @@ const Home = () => {
       }
       setPing(!ping);
       console.log("pinging...");
-      setVideoIndex(videoIndex ? 0 : 1);
       setSessionId("");
     }, 20000);
   }, [ping]);
@@ -128,7 +127,7 @@ const Home = () => {
     <div className='container'>
       <Grid container spacing={2}>
         <Grid
-          className='first_column'
+          className='banner_column'
           item
           sm={4}
           md={4}
@@ -158,9 +157,6 @@ const Home = () => {
           <SettingsBar></SettingsBar>
           <RewardsBar />
           <Grid className='app_buttons' container>
-            {/* <Grid item sm={4} md={2} display={{ xs: "none" ,md:"block"}}>
-                        
-                    </Grid> */}
             <Grid item sm={4} md={6} display={{ xs: "none", md: "block" }}>
               <CustomButtom
                 top_text={"Download on the"}
@@ -182,7 +178,7 @@ const Home = () => {
           </Grid>
         </Grid>
         <Grid
-          className='first_column'
+          className='banner_column'
           item
           sm={4}
           md={4}
@@ -200,10 +196,6 @@ const Home = () => {
           </div>
         </Grid>
       </Grid>
-
-      <div>
-        <img className='full_banner_image' src={full_banner} alt='banner.png' />
-      </div>
     </div>
   );
 };

@@ -11,9 +11,21 @@
     // flex-direction: row;
 
 }
+.settings_text{
+  font-family: 'Inter';
+  font-weight: 700;
+  font-size: 46px;
+  color: #FFFFFF;
+  margin-bottom: 50px;
+  
+}
+.settings_title{
+  display: flex;
+  justify-content: center;
+}
 
 .arrowback_button {
-    display: inline-flex;
+    display: flex;
     align-items: center;
     color: white;
     border: none;

@@ -23,7 +23,8 @@ const SettingsBar=({flipShowHome})=>{
                         <span className="tile_text" >YoutubBrewer</span>
                     </Grid>
                     <Grid item md={3}>
-                    <button className="file_button" style={{backgroundColor: 'transparent', border: 'none', filter: 'invert(100%)'}}>
+                    <button className="file_button" style={{backgroundColor: 'transparent', border: 'none', filter: 'invert(100%)'}}
+                     onClick={()=> window.open("https://www.google.com", "")}> {/*add path to Q/A Manual*/ } 
                             <Icon imageName={"file"}  width={49} height={49}></Icon>
                     </button>
                     </Grid>

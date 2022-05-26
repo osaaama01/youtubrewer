@@ -1,8 +1,8 @@
 import { Grid } from "@mui/material";
-import React from "react"
+import React from "react";
 import Icon from "../custom-button/Icon/icon.component";
 
-import "./settings-bar.styles.scss"
+import "./settings-bar.styles.scss";
 
 const SettingsBar=({flipShowHome})=>{
     

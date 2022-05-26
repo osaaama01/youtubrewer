@@ -2,8 +2,6 @@ import React, { useEffect, useState } from "react";
 
 import { Grid } from "@mui/material";
 import banner from "../../assets/banner.PNG";
-import full_banner from "../../assets/full_banner.PNG";
-
 import RewardsBar from "../../components/rewardbar/rewardbar.component";
 import "./home.styles.scss";
 import { Battery } from "../../components/battery/battery.component";
@@ -50,21 +48,11 @@ function pingSession(obj) {
   return session;
 }
 
-const Home = ({videos,flipShowHome}) => {
+const Home = ({ videos, flipShowHome }) => {
   const [click, setClicks] = useState("-");
-  const [url, setUrl] = useState("RCMXO9sBIcU");
+  const [url, setUrl] = useState("");
   const [payload, setPayload] = useState();
-  const sessionPayload=videos
-  // const [sessionPayload, setSessionPayload] = useState([
-  //   {
-  //     video_url: "https://www.youtube.com/watch?v=TVT7R6wqlzo",
-  //     subscription_type: 0,
-  //   },
-  //   {
-  //     video_url: "https://www.youtube.com/watch?v=gv9ugDJ1ynU",
-  //     subscription_type: 0,
-  //   },
-  // ]);
+  const sessionPayload = videos;
   const [sessionId, setSessionId] = useState("");
   const [ping, setPing] = useState(false);
   const [videoIndex, setVideoIndex] = useState(0);
@@ -121,17 +109,18 @@ const Home = ({videos,flipShowHome}) => {
       setPing(!ping);
       console.log(sessionPayload);
       console.log("pinging...");
-      setVideoIndex(videoIndex===sessionPayload.length-1 ? 0 : videoIndex+1);
+      setVideoIndex(
+        videoIndex === sessionPayload.length - 1 ? 0 : videoIndex + 1
+      );
       setSessionId("");
-    }, 20000);
+    }, 60000);
   }, [ping]);
 
   return (
-    
     <div className='container'>
       <Grid container spacing={2}>
         <Grid
-          className='first_column'
+          className='banner_column'
           item
           sm={4}
           md={4}
@@ -161,10 +150,13 @@ const Home = ({videos,flipShowHome}) => {
           <SettingsBar flipShowHome={flipShowHome}></SettingsBar>
           <RewardsBar />
           <Grid className='app_buttons' container>
-            {/* <Grid item sm={4} md={2} display={{ xs: "none" ,md:"block"}}>
-                        
-                    </Grid> */}
-            <Grid item sm={4} md={6} display={{ xs: "none", md: "block" }}>
+            <Grid
+              item
+              sm={4}
+              md={6}
+              display={{ xs: "none", md: "block" }}
+              style={{ display: "flex", justifyContent: "center" }}
+            >
               <CustomButtom
                 top_text={"Download on the"}
                 bottom_text={"App Store"}
@@ -173,7 +165,13 @@ const Home = ({videos,flipShowHome}) => {
                 height={24}
               ></CustomButtom>
             </Grid>
-            <Grid item sm={4} md={6} display={{ xs: "none", md: "block" }}>
+            <Grid
+              item
+              sm={4}
+              md={6}
+              display={{ xs: "none", md: "block" }}
+              style={{ display: "flex", justifyContent: "center" }}
+            >
               <CustomButtom
                 top_text={"GET IT ON"}
                 bottom_text={"Google Play"}
@@ -185,7 +183,7 @@ const Home = ({videos,flipShowHome}) => {
           </Grid>
         </Grid>
         <Grid
-          className='first_column'
+          className='banner_column'
           item
           sm={4}
           md={4}
@@ -203,10 +201,6 @@ const Home = ({videos,flipShowHome}) => {
           </div>
         </Grid>
       </Grid>
-
-      <div>
-        <img className='full_banner_image' src={full_banner} alt='banner.png' />
-      </div>
     </div>
   );
 };

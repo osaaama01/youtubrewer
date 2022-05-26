@@ -5,12 +5,12 @@ import { Circle } from "../Circle";
 
 export const Battery = () => {
   return (
-    <Grid container style={{ justifyContent: "center" }}>
+    <Grid container style={{ justifyContent: "center", height: "100%" }}>
       <Grid item md={11} style={{ backgroundColor: "#D9CFCC" }}>
         <Grid
           item
           md={12}
-          style={{ height: "15%", display: "flex", justifyContent: "right" }}
+          style={{ height: "15px", display: "flex", justifyContent: "right" }}
         >
           <Grid container item md={11}>
             <Grid
@@ -142,7 +142,7 @@ export const Battery = () => {
                   textTransform: "none",
                   cursor: "default",
                   width: "100%",
-                  height: "60%",
+                  padding: "0",
                 }}
               >
                 <div className='battery_button'>

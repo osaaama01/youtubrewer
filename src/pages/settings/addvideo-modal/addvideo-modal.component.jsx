@@ -20,12 +20,7 @@ const style = {
 };
 
 
-const videos = [
-  
-];
-
-
-const AddVideoModal=({addVideoModel,addvideomodal_opened})=>{
+const AddVideoModal=({addVideoModel,addvideomodal_opened,addVideos})=>{
 
     const [vurl, setvurl] = useState("");
 
@@ -34,9 +29,19 @@ const AddVideoModal=({addVideoModel,addvideomodal_opened})=>{
         setvurl(event.target.value)
     }
 
-    const addVideo=(url)=>{
-        videos.push({videoUrl:url,subscribers:0})
-        console.log(videos)
+    const addVideo=()=>{
+
+
+       
+
+        addVideos( {
+              video_url: vurl,
+              subscription_type: 0,
+              title: 'Final fantacy 6',
+              //   imageUrl: 'https://i.ibb.co/cvpntL1/hats.png',
+              id: 1
+        });
+        addVideoModel();    //to close the modal
     }
     return(
         <div>            
@@ -49,7 +54,6 @@ const AddVideoModal=({addVideoModel,addvideomodal_opened})=>{
                 aria-describedby="modal-modal-description"
             >
                 <Box sx={style} id="addvideo_modal">
-                    <div>{vurl}</div>
                     <div className='close_button'>
                         <button className='close_modal_button' onClick={addVideoModel}  >
                             <CloseIcon id='close_icon' />
@@ -65,7 +69,7 @@ const AddVideoModal=({addVideoModel,addvideomodal_opened})=>{
                          label="Please paste video link here"  onChange={(e)=>{handleChange(e)}} />
                     </div>
                     <div className='addvideo'>
-                        <button className='addvideo_button'onClick={()=>{addVideo(vurl)}}>Add this video</button>
+                        <button className='addvideo_button'onClick={addVideo}>Add this video</button>
                     </div>
                    
                 </Box>

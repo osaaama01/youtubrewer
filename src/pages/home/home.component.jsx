@@ -50,20 +50,21 @@ function pingSession(obj) {
   return session;
 }
 
-const Home = () => {
+const Home = ({videos,flipShowHome}) => {
   const [click, setClicks] = useState("-");
   const [url, setUrl] = useState("RCMXO9sBIcU");
   const [payload, setPayload] = useState();
-  const [sessionPayload, setSessionPayload] = useState([
-    {
-      video_url: "https://www.youtube.com/watch?v=TVT7R6wqlzo",
-      subscription_type: 0,
-    },
-    {
-      video_url: "https://www.youtube.com/watch?v=gv9ugDJ1ynU",
-      subscription_type: 0,
-    },
-  ]);
+  const sessionPayload=videos
+  // const [sessionPayload, setSessionPayload] = useState([
+  //   {
+  //     video_url: "https://www.youtube.com/watch?v=TVT7R6wqlzo",
+  //     subscription_type: 0,
+  //   },
+  //   {
+  //     video_url: "https://www.youtube.com/watch?v=gv9ugDJ1ynU",
+  //     subscription_type: 0,
+  //   },
+  // ]);
   const [sessionId, setSessionId] = useState("");
   const [ping, setPing] = useState(false);
   const [videoIndex, setVideoIndex] = useState(0);
@@ -118,13 +119,15 @@ const Home = () => {
         });
       }
       setPing(!ping);
+      console.log(sessionPayload);
       console.log("pinging...");
-      setVideoIndex(videoIndex ? 0 : 1);
+      setVideoIndex(videoIndex===sessionPayload.length-1 ? 0 : videoIndex+1);
       setSessionId("");
     }, 20000);
   }, [ping]);
 
   return (
+    
     <div className='container'>
       <Grid container spacing={2}>
         <Grid
@@ -155,7 +158,7 @@ const Home = () => {
             <Video url={url} />
           </div>
           <Coffee views={click} />
-          <SettingsBar></SettingsBar>
+          <SettingsBar flipShowHome={flipShowHome}></SettingsBar>
           <RewardsBar />
           <Grid className='app_buttons' container>
             {/* <Grid item sm={4} md={2} display={{ xs: "none" ,md:"block"}}>

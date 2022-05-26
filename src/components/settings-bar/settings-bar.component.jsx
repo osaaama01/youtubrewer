@@ -4,7 +4,7 @@ import Icon from "../custom-button/Icon/icon.component";
 
 import "./settings-bar.styles.scss"
 
-const SettingsBar=()=>{
+const SettingsBar=({flipShowHome})=>{
     
     return(
         <div className="settings_bar">
@@ -14,7 +14,7 @@ const SettingsBar=()=>{
             <div className="middle_row">
                 <Grid container direction={"row"} alignItems="center">
                     <Grid item md={3}>
-                        <button className="settings_button" style={{backgroundColor: 'transparent', border: 'none'}}>
+                        <button className="settings_button" style={{backgroundColor: 'transparent', border: 'none'}} onClick={flipShowHome}>
                             <Icon imageName={"settings"}  width={49} height={49}></Icon>
                         </button>
                         

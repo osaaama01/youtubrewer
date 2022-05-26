@@ -14,15 +14,17 @@ import AddVideoModal from './addvideo-modal/addvideo-modal.component';
 
 
 class Settings extends React.Component {
-   
+  
     
-    constructor() {
+    constructor({addVideo,videos,flipShowHome}) {
         super();
        
-        this.state = {opened: false,addvideomodal_opened:false};
+        this.state = {opened: false,addvideomodal_opened:false,addVideo:addVideo,videos:videos,flipShowHome:flipShowHome
+        };
         this.OpenConfirmModal = this.OpenConfirmModal.bind(this);
-        this.OpenAddVideoModal=this.OpenAddVideoModal.bind(this)
+        this.OpenAddVideoModal=this.OpenAddVideoModal.bind(this);
     }
+    
      OpenConfirmModal(){
         
         this.setState({opened:!this.state.opened});
@@ -33,11 +35,11 @@ class Settings extends React.Component {
 
     render() {
         return <Grid className='settings_page' container>
-            <AddVideoModal addVideoModel={this.OpenAddVideoModal} addvideomodal_opened={this.state.addvideomodal_opened} ></AddVideoModal>
+            <AddVideoModal addVideoModel={this.OpenAddVideoModal} addvideomodal_opened={this.state.addvideomodal_opened} addVideos={this.state.addVideo} ></AddVideoModal>
           <DeleteModal isOpened={this.OpenConfirmModal} opened={this.state.opened}/>
 
       <div className='arrowback_button' >
-          <button style={{ background: "#311414", color: "white", border: "none" }} >
+          <button style={{ background: "#311414", color: "white", border: "none" }} onClick={this.state.flipShowHome}>
               <ArrowBackIcon height={44} className="arrow_icon" />
           </button>
 
@@ -54,7 +56,7 @@ class Settings extends React.Component {
 
               <div className='videos_container'>
                   {
-                      videos.map((video) => (
+                      this.state.videos.map((video) => (
                           <div className='video-item' key={video.id}>
                               <img src={video_image} />
                               <span className='text'>{video.title}  </span>
@@ -100,23 +102,7 @@ class Settings extends React.Component {
   }
 
 
-const videos = [
-    {
-        title: 'Final fantacy 6',
-        //   imageUrl: 'https://i.ibb.co/cvpntL1/hats.png',
-        id: 1,
-    },
-    {
-        title: 'Final fantacy 6',
-        //   imageUrl: 'https://i.ibb.co/cvpntL1/hats.png',
-        id: 2,
-    },
-    {
-        title: 'Final fantacy 6',
-        //   imageUrl: 'https://i.ibb.co/cvpntL1/hats.png',
-        id: 3,
-    }
-];
+
 
 
 // const Settings = () => {

@@ -8,8 +8,5 @@ import Main from './pages/main/main.component';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
     <Main/>
-
-  </React.StrictMode>
 );

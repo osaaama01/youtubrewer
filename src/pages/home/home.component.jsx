@@ -25,18 +25,21 @@ function getSum(obj) {
   return sum;
 }
 
-function getSession(obj) {
-  console.log(obj);
-  const session = axios
+async function getSession(obj) {
+  const payload = {
+    video_url: obj.video_url.toString(),
+    subscription_type: 0,
+  };
+  console.log("getSession payload", payload);
+  return await axios
     .post(
       "https://us-central1-youtubrewer.cloudfunctions.net/api/startSession",
-      obj
+      payload
     )
     .then((res) => {
-      // console.log(res.data.sessionid);
+      console.log("Session ID", res.data.sessionid);
       return res.data.sessionid;
     });
-  return session;
 }
 
 function pingSession(obj) {
@@ -68,18 +71,17 @@ const Home = ({ videos, flipShowHome }) => {
       .catch((e) => {
         if (e.response.status === 404 || e.response.status === 403) {
           //session expired
+          console.log(videoIndex);
           getSession(sessionPayload[videoIndex]).then((id) => {
             setSessionId(id);
           });
-          console.log(sessionId);
-          console.log("403");
         } else if (
           e.response.status === 400 ||
           e.response.status === 402 ||
           e.response.status === 408
         ) {
+          console.log(e.response.status);
           setTimeout(() => {
-            console.log("402");
             setSessionId("");
           }, 60000);
         }
@@ -109,11 +111,7 @@ const Home = ({ videos, flipShowHome }) => {
       setPing(!ping);
       console.log(sessionPayload);
       console.log("pinging...");
-      setVideoIndex(
-        videoIndex === sessionPayload.length - 1 ? 0 : videoIndex + 1
-      );
-      setSessionId("");
-    }, 60000);
+    }, 10000);
   }, [ping]);
 
   return (
@@ -144,7 +142,13 @@ const Home = ({ videos, flipShowHome }) => {
           {/* 50% width on desktop and 66.66% width on mobile */}
           <div style={{ backgroundColor: "#BAB0B0", borderRadius: "12px" }}>
             <Battery buttonText={"Please set the video to brew"} />
-            <Video url={url} />
+            <Video
+              url={url}
+              setVideoIndex={(value) => setVideoIndex(value)}
+              setSessionId={(value) => setSessionId(value)}
+              videoIndex={videoIndex}
+              sessionPayloadlength={sessionPayload.length}
+            />
           </div>
           <Coffee views={click} />
           <SettingsBar flipShowHome={flipShowHome}></SettingsBar>

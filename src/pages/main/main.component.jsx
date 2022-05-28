@@ -9,7 +9,7 @@ class Main extends  React.Component{
        
         this.state = {showHome: true,addvideomodal_opened:false,videos:[
             {
-              video_url: "https://www.youtube.com/watch?v=TVT7R6wqlzo",
+              video_url: "https://www.youtube.com/watch?v=TVT7R6wqlz",
               subscription_type: 0,
               title: 'Final fantacy 6',
               //   imageUrl: 'https://i.ibb.co/cvpntL1/hats.png',
@@ -20,15 +20,20 @@ class Main extends  React.Component{
               subscription_type: 0,
               title: 'Final fantacy 6',
               //   imageUrl: 'https://i.ibb.co/cvpntL1/hats.png',
-              id: 1
+              id: 2
             },
           ]};
         this.addVideo=this.addVideo.bind(this);
+        this.deleteVideo=this.deleteVideo.bind(this)
         this.flipShowHome=this.flipShowHome.bind(this)
     }
 
     addVideo(video){
         this.state.videos.push(video)
+        this.setState({videos:this.state.videos});
+    }
+    deleteVideo(index){
+        this.state.videos.splice(index, 1);
         this.setState({videos:this.state.videos});
     }
     flipShowHome(){
@@ -41,7 +46,7 @@ class Main extends  React.Component{
             return <Home videos={this.state.videos} flipShowHome={this.flipShowHome}/>;
           }
           else{
-              return <Settings videos={this.state.videos} addVideo={this.addVideo} flipShowHome={this.flipShowHome}/>
+              return <Settings videos={this.state.videos} addVideo={this.addVideo} deleteVideo={this.deleteVideo} flipShowHome={this.flipShowHome}/>
           }
      }
 };

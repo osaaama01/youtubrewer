@@ -18,7 +18,12 @@ const style = {
     p: 4,
 };
 
-const DeleteModal = ({isOpened,opened}) => {    
+const DeleteModal = ({isOpened,opened,deleteVideo,index}) => {  
+    
+    const deleteCurrentVideo=()=>{
+        deleteVideo(index)
+        isOpened();//to close the delete modal
+    }
 
     return (
         <div>
@@ -44,7 +49,7 @@ const DeleteModal = ({isOpened,opened}) => {
                         <span className='sub-title'> Current brewing session will stop</span>
                     </div>
                     <div className='confirm'>
-                        <button className='confirm_button'>Yes</button>
+                        <button className='confirm_button' onClick={deleteCurrentVideo}>Yes</button>
                     </div>
                     {/* <Typography id="modal-modal-title" variant="h6" component="h2">
           Wich to delete Selecte video?

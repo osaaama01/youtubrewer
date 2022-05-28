@@ -16,17 +16,19 @@ import AddVideoModal from './addvideo-modal/addvideo-modal.component';
 class Settings extends React.Component {
   
     
-    constructor({addVideo,videos,flipShowHome}) {
+    constructor({videos,addVideo,deleteVideo,flipShowHome}) {
         super();
        
-        this.state = {opened: false,addvideomodal_opened:false,addVideo:addVideo,videos:videos,flipShowHome:flipShowHome
+        this.state = {opened: false,addvideomodal_opened:false,addVideo:addVideo,deleteVideo:deleteVideo,videos:videos,
+            flipShowHome:flipShowHome,index:-1
+              
         };
         this.OpenConfirmModal = this.OpenConfirmModal.bind(this);
         this.OpenAddVideoModal=this.OpenAddVideoModal.bind(this);
     }
     
-     OpenConfirmModal(){
-        
+     OpenConfirmModal(index_num){
+        this.setState({index:index_num})
         this.setState({opened:!this.state.opened});
     }
     OpenAddVideoModal(){
@@ -34,20 +36,24 @@ class Settings extends React.Component {
     }
 
     render() {
-        return <Grid className='settings_page' container>
-            <AddVideoModal addVideoModel={this.OpenAddVideoModal} addvideomodal_opened={this.state.addvideomodal_opened} addVideos={this.state.addVideo} ></AddVideoModal>
-          <DeleteModal isOpened={this.OpenConfirmModal} opened={this.state.opened}/>
+        return <div>       
 
-      <div className='arrowback_button' >
+<div className='arrowback_button' >
           <button style={{ background: "#311414", color: "white", border: "none" }} onClick={this.state.flipShowHome}>
               <ArrowBackIcon height={44} className="arrow_icon" />
           </button>
 
       </div>
-      <div className='tile' >
-          {/* <hr style={{color:"white"}}/> */}
+      <div className='settings_title' >
+         <span className="settings_text">SETTING</span>
 
       </div>
+        
+        <Grid className='settings_page' container>
+            <AddVideoModal addVideoModel={this.OpenAddVideoModal} addvideomodal_opened={this.state.addvideomodal_opened} addVideos={this.state.addVideo} ></AddVideoModal>
+          <DeleteModal isOpened={this.OpenConfirmModal} opened={this.state.opened} deleteVideo={this.state.deleteVideo} index={this.state.index} />
+
+      
       <Grid container>
           <Grid item md={3}>
 
@@ -56,13 +62,13 @@ class Settings extends React.Component {
 
               <div className='videos_container'>
                   {
-                      this.state.videos.map((video) => (
+                      this.state.videos.map((video,index) => (
                           <div className='video-item' key={video.id}>
                               <img src={video_image} />
                               <span className='text'>{video.title}  </span>
 
                               <span className='delete'>
-                                  <button className='delete_button' onClick={this.OpenConfirmModal}>
+                                  <button className='delete_button' onClick={()=>{this.OpenConfirmModal(index)}}>
                                       <RemoveIcon style={{ color: "black", justifyContent: "center" }} />
 
                                   </button>
@@ -98,6 +104,8 @@ class Settings extends React.Component {
 
 
   </Grid>
+  </div>
+ 
     }
   }
 

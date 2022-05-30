@@ -1,10 +1,11 @@
 import { Box, Modal } from "@mui/material";
-import React, { useState } from "react"
+import React, { useState,useEffect } from "react"
 import CloseIcon from '@mui/icons-material/Close';
 import TextField from '@mui/material/TextField';
 
 
 import "./addvideo-modal.styles.scss"
+import axios from "axios";
 
 
 const style = {
@@ -19,28 +20,44 @@ const style = {
     p: 4,
 };
 
+const youtube_parser=(url)=>{
+    var regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#&?]*).*/;   //regex to validate the youtube url
+    var match = url.match(regExp);
+    return (match&&match[7].length===11)? match[7] : false;
+}
 
 const AddVideoModal=({addVideoModel,addvideomodal_opened,addVideos})=>{
 
     const [vurl, setvurl] = useState("");
-
+    const [thumbnail, setThumbnail] = useState("");
+    const [youtubeVideoId, setYoutubeId] = useState("");
+    
+    
 
     const handleChange=(event)=>{
-        setvurl(event.target.value)
+
+        let youtube_video_id=youtube_parser(event.target.value);
+        setYoutubeId(youtube_video_id)
+
+        if (youtube_video_id.length === 11) {
+            setvurl(event.target.value);
+            const video_thumbnail = 'http://img.youtube.com/vi/'+youtube_video_id+'/hqdefault.jpg';
+            setThumbnail(video_thumbnail);
+            
+        }
     }
 
-    const addVideo=()=>{
-
-
+    const addVideo=()=>{  
        
-
         addVideos( {
-              video_url: vurl,
-              subscription_type: 0,
-              title: 'Final fantacy 6',
-              //   imageUrl: 'https://i.ibb.co/cvpntL1/hats.png',
-              id: 1
+            video_url: vurl,
+            subscription_type: 0,
+            title: 'Final fantacy 6',
+            imageUrl: thumbnail,
+            youtubeId:youtubeVideoId,
         });
+        setThumbnail("")
+       
         addVideoModel();    //to close the modal
     }
     return(
@@ -67,6 +84,9 @@ const AddVideoModal=({addVideoModel,addvideomodal_opened,addVideos})=>{
                     <div className="videolink" >
                         <TextField className="videolink_textbox" 
                          label="Please paste video link here"  onChange={(e)=>{handleChange(e)}} />
+                    </div>
+                    <div className="thumbnail" hidden={thumbnail==""}>
+                        <img className="thumbnail_image" src={thumbnail}></img>
                     </div>
                     <div className='addvideo'>
                         <button className='addvideo_button'onClick={addVideo}>Add this video</button>

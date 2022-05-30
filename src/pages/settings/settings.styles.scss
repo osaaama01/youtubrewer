@@ -11,6 +11,29 @@
     // flex-direction: row;
 
 }
+
+.empty_list_container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+[hidden]{
+  display:none;
+}
+
+.emptylist_placeholder{
+  //flex-basis: 38%;
+  align-items: center;
+  
+  font-family: "Inter";
+  font-size: 26px;
+  font-weight: 500;
+  line-height: 40px;
+  letter-spacing: 0em;
+  color: white;
+  margin:5px;
+  
+}
 .settings_text{
   font-family: 'Inter';
   font-weight: 700;
@@ -23,6 +46,12 @@
   display: flex;
   justify-content: center;
 }
+.settings_title_image{
+  flex: 1;
+  //height: 136px;
+  margin-bottom: 30px;
+}
+
 
 .arrowback_button {
     display: flex;
@@ -60,7 +89,7 @@
     max-height: 430px;
     max-width: 792px;
     margin: 0 auto;
-    
+    border-radius: 26px;    
 
 }
 .video_text{

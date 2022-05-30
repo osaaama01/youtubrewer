@@ -3,7 +3,7 @@ import BoltIcon from "@mui/icons-material/Bolt";
 import "./battery.style.scss";
 import { Circle } from "../Circle";
 
-export const Battery = () => {
+export const Battery = ({flipShowHome}) => {
   return (
     <Grid container style={{ justifyContent: "center", height: "100%" }}>
       <Grid item md={11} style={{ backgroundColor: "#D9CFCC" }}>
@@ -144,6 +144,7 @@ export const Battery = () => {
                   width: "100%",
                   padding: "0",
                 }}
+                onClick={flipShowHome}
               >
                 <div className='battery_button'>
                   Please set the video to brew

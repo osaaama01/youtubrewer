@@ -4,24 +4,12 @@ import datant from "../../assets/datant.PNG";
 import YoutubeEmbed from "./player.component";
 import "./video.styles.scss";
 
-const Video = ({
-  url,
-  setVideoIndex,
-  setSessionId,
-  videoIndex,
-  sessionPayloadlength,
-}) => {
+const Video = ({ url }) => {
   return (
     <div>
       <Grid container justifyContent={"center"}>
         <Grid item md={11}>
-          <YoutubeEmbed
-            embedId={url}
-            setVideoIndex={setVideoIndex}
-            setSessionId={setSessionId}
-            videoIndex={videoIndex}
-            sessionPayloadlength={sessionPayloadlength}
-          />
+          <YoutubeEmbed embedId={url} />
         </Grid>
       </Grid>
       <Grid container justifyContent={"center"}>

@@ -5,7 +5,7 @@ import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
 
-import video_image from "../../assets/video_image.PNG"
+import settings_title from "../../assets/settings_title.png"
 
 import './settings.styles.scss'
 import DeleteModal from './delete-modal/delete-modal.component';
@@ -44,10 +44,13 @@ class Settings extends React.Component {
           </button>
 
       </div>
-      <div className='settings_title' >
+      <div className='settings_title'>
+          <img className='settings_title_image' src={settings_title}></img>
+      </div>
+      {/* <div className='settings_title' >
          <span className="settings_text">SETTING</span>
 
-      </div>
+      </div> */}
         
         <Grid className='settings_page' container>
             <AddVideoModal addVideoModel={this.OpenAddVideoModal} addvideomodal_opened={this.state.addvideomodal_opened} addVideos={this.state.addVideo} ></AddVideoModal>
@@ -61,10 +64,16 @@ class Settings extends React.Component {
           <Grid item md={6} zeroMinWidth>
 
               <div className='videos_container'>
+
+                  <div className='empty_list_container' style={{height:"280px"}} hidden={this.state.videos.length!=0}>
+                    
+                    <p className='emptylist_placeholder' >Touch + button below to add video here!</p>
+                  </div>
                   {
                       this.state.videos.map((video,index) => (
                           <div className='video-item' key={video.id}>
-                              <img src={video_image} />
+                              {/* <h1>{video.imageUrl}</h1> */}
+                              <img src={video.imageUrl} />
                               <span className='text'>{video.title}  </span>
 
                               <span className='delete'>

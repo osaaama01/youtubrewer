@@ -8,20 +8,21 @@ class Main extends  React.Component{
         super();
        
         this.state = {showHome: true,addvideomodal_opened:false,videos:[
-            {
-              video_url: "https://www.youtube.com/watch?v=TVT7R6wqlz",
-              subscription_type: 0,
-              title: 'Final fantacy 6',
-              //   imageUrl: 'https://i.ibb.co/cvpntL1/hats.png',
-              id: 1
-            },
-            {
-              video_url: "https://www.youtube.com/watch?v=gv9ugDJ1ynU",
-              subscription_type: 0,
-              title: 'Final fantacy 6',
-              //   imageUrl: 'https://i.ibb.co/cvpntL1/hats.png',
-              id: 2
-            },
+            // {
+            //   video_url: "https://www.youtube.com/watch?v=TVT7R6wqlz",
+            //   subscription_type: 0,
+            //   title: 'Final fantacy 6',
+            //      imageUrl: 'https://i.ibb.co/cvpntL1/hats.png',
+            //      id:"1"
+            // },
+            // {
+            //   video_url: "https://www.youtube.com/watch?v=gv9ugDJ1ynU",
+            //   subscription_type: 0,
+            //   title: 'Final fantacy 6',
+            //   imageUrl: 'https://i.ibb.co/cvpntL1/hats.png',
+            //   id:"2",
+
+            // },
           ]};
         this.addVideo=this.addVideo.bind(this);
         this.deleteVideo=this.deleteVideo.bind(this)
